@@ -1,0 +1,36 @@
+create sequence bno_seq; 
+
+select * from board;
+
+ALTER TABLE BOARD MODIFY (TITLE NOT NULL ENABLE);
+ 
+ALTER TABLE BOARD MODIFY (WRITER NOT NULL ENABLE);
+ 
+ALTER TABLE BOARD ADD PRIMARY KEY (BNO);
+   
+Insert into BOARD (BNO,TITLE,WRITER,REGDATE,VIEWCNT,REPLYCNT,LINK1,LINK2) values (bno_seq.NEXTVAL,'쓰촨성 지진 빠져나온 한국 관광객 ','다음',to_date('17/08/10','RR/MM/DD'),6,1,'http://v.media.daum.net/v/20170810140304952?rcmd=rn',null);
+Insert into BOARD (BNO,TITLE,WRITER,REGDATE,VIEWCNT,REPLYCNT,LINK1,LINK2) values (bno_seq.NEXTVAL,'박능후 복지장관 "그간 정부가 돌보지 않은 사람들 돌보겠다"','연합뉴스',to_date('17/08/10','RR/MM/DD'),0,0,'http://v.media.daum.net/v/20170810151426006',null);
+Insert into BOARD (BNO,TITLE,WRITER,REGDATE,VIEWCNT,REPLYCNT,LINK1,LINK2) values (bno_seq.NEXTVAL,'[사실은] ''택시운전사'' 장면 중..시민 조준 사격의 진실은?','sbs',to_date('17/08/10','RR/MM/DD'),0,0,'http://v.media.daum.net/v/20170809212504025',null);
+Insert into BOARD (BNO,TITLE,WRITER,REGDATE,VIEWCNT,REPLYCNT,LINK1,LINK2) values (bno_seq.NEXTVAL,'北, 이틀째 괌 기지 미사일 사격 위협하는 노림수는','한국일보',to_date('17/08/10','RR/MM/DD'),0,0,'http://v.media.daum.net/v/20170810165008743',null);
+Insert into BOARD (BNO,TITLE,WRITER,REGDATE,VIEWCNT,REPLYCNT,LINK1,LINK2) values (bno_seq.NEXTVAL,'[날씨] 우산 꼭 챙겨나가세요..내륙 지역 요란한 소나기','sbs',to_date('17/08/10','RR/MM/DD'),1,0,'http://v.media.daum.net/v/20170810081503127',null);
+Insert into BOARD (BNO,TITLE,WRITER,REGDATE,VIEWCNT,REPLYCNT,LINK1,LINK2) values (bno_seq.NEXTVAL,'삼성-애플-LG ''듀얼카메라폰'' 격돌 예고..차이점은?','뉴스1',to_date('17/08/10','RR/MM/DD'),1,0,'http://v.media.daum.net/v/20170810153742035',null);
+Insert into BOARD (BNO,TITLE,WRITER,REGDATE,VIEWCNT,REPLYCNT,LINK1,LINK2) values (bno_seq.NEXTVAL,'''부분 절대평가'' 유력..국어·수학 상대평가로 남을듯','머니투데이',to_date('17/08/10','RR/MM/DD'),1,0,'http://v.media.daum.net/v/20170810155951793',null);
+Insert into BOARD (BNO,TITLE,WRITER,REGDATE,VIEWCNT,REPLYCNT,LINK1,LINK2) values (bno_seq.NEXTVAL,'[메이크업 트렌드] 여름 취향저격 과즙메이크업 - 레드벨벳 ‘빨간맛’','아이린짱팬',to_date('17/08/11','RR/MM/DD'),2,0,'naver.com',null);
+
+  ALTER TABLE ATTACH MODIFY (FULLNAME NOT NULL ENABLE);
+  ALTER TABLE ATTACH MODIFY (BNO NOT NULL ENABLE);
+  ALTER TABLE ATTACH ADD PRIMARY KEY (FULLNAME);
+  
+  
+ALTER TABLE REPLY MODIFY (REPLYTEXT NOT NULL ENABLE);
+ 
+ALTER TABLE REPLY MODIFY (REPLYER NOT NULL ENABLE);
+ 
+ALTER TABLE REPLY ADD PRIMARY KEY (RNO);
+   
+select * from board
+   
+Insert into REPLY (RNO,BNO,REPLYTEXT,REPLYER,REGDATE,UPDATEDATE) values (1,1,'거부할거야','거부거부',to_date('17/08/10','RR/MM/DD'),null);
+Insert into REPLY (RNO,BNO,REPLYTEXT,REPLYER,REGDATE,UPDATEDATE) values (2,2,'정말인고야?','정말?',to_date('17/08/10','RR/MM/DD'),null);
+Insert into REPLY (RNO,BNO,REPLYTEXT,REPLYER,REGDATE,UPDATEDATE) values (3,3,'그르게...어떻게 되려나','걱정인형',to_date('17/08/10','RR/MM/DD'),null);
+Insert into REPLY (RNO,BNO,REPLYTEXT,REPLYER,REGDATE,UPDATEDATE) values (4,4,'다행이네요!!!','작성자',to_date('17/08/31','RR/MM/DD'),to_date('17/08/31','RR/MM/DD'));
